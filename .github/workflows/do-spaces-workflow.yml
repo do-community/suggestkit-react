@@ -18,12 +18,13 @@ jobs:
       with:
         node-version: "${{ steps.nvm.outputs.NVMRC }}"
 
+    - name: Login to npm
+      run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+
     - name: npm ci and build
       run: |
         npm ci
         npm run build
-      env:
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
     - name: Deploy commit to DigitalOcean Spaces
       run: aws s3 sync ./dist s3://${{ secrets.SPACES_BUCKET }}/commits/suggestkit-react/${{ github.sha }} --endpoint=https://${{ secrets.SPACES_REGION }}.digitaloceanspaces.com --acl public-read --content-encoding utf8
