@@ -7,7 +7,9 @@
     "src"
   ],
   "scripts": {
-    "demo": "parcel index.html"
+    "deploy:spaces:comment": "do-vue comment suggestkit-react",
+    "demo": "parcel index.html",
+    "build": "parcel build demo.jsx && cp index.deploy.html dist/index.html"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "@jakemakesstuff/suggestkit": "1.0.1"
   },
   "devDependencies": {
+    "do-vue": "git+https://github.com/do-community/do-vue.git",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "bulma": "0.9.0",
