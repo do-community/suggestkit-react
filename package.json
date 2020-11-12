@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/do-community/suggestkit-react#readme",
   "dependencies": {
-    "@jakemakesstuff/suggestkit": "1.1.0"
+    "suggestkit": "git+https://github.com/jakemakesstuff/suggestkit.git"
   },
   "devDependencies": {
     "do-vue": "git+https://github.com/do-community/do-vue.git",

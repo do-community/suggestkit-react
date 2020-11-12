@@ -1,5 +1,5 @@
 import React from "react";
-import suggestKit from "@jakemakesstuff/suggestkit";
+import suggestKit from "suggestkit";
 
 export default class SuggestionsSearch extends React.Component {
     constructor(props) {
